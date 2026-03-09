@@ -303,8 +303,19 @@ function submitForm() {
     return;
   }
 
-  // ── In production: POST to your backend or a Google Sheet here ──
-  console.log('Lead:', { name, email, phone, status, scores });
+  // Send to Formspree
+  fetch('https://formspree.io/f/xkoqopqv', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      name:    name,
+      email:   email,
+      phone:   phone,
+      status:  status,
+      result:  document.getElementById('r-combo').textContent,
+      scores:  JSON.stringify(scores)
+    })
+  });
 
   document.getElementById('form-fields').style.display = 'none';
   document.getElementById('form-thanks').style.display = 'block';
