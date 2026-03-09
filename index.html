@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Discovery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ LANDING ═══════════════════════════════ -->
+  <section id="s-landing" class="screen show">
+    <div class="landing-left">
+      <div class="left-tag">Career Discovery</div>
+      <div class="left-number">12<span>Qs</span></div>
+      <div class="archetype-stack">
+        <div class="ast-item" style="--d:0s">Strategist</div>
+        <div class="ast-item" style="--d:.08s">Builder</div>
+        <div class="ast-item" style="--d:.16s">Analyst</div>
+        <div class="ast-item" style="--d:.24s">Creator</div>
+        <div class="ast-item" style="--d:.32s">Connector</div>
+      </div>
+    </div>
+    <div class="landing-right">
+      <div class="landing-inner">
+        <p class="landing-kicker">Find your path</p>
+        <h1 class="landing-title">Career<br/><em>Discovery</em><br/>Game</h1>
+        <p class="landing-sub">Answer a few questions about how you naturally think and work. Discover the careers built for someone like you.</p>
+        <button class="btn-cta" id="btn-start">Start Game <span class="btn-arrow">→</span></button>
+        <p class="landing-note">Takes about 3 minutes · Free</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ QUESTION ═══════════════════════════════ -->
+  <section id="s-question" class="screen">
+    <div class="q-shell">
+
+      <header class="q-header">
+        <div class="q-logo">Career Discovery</div>
+        <div class="q-meta">
+          <span id="q-counter">1 / 12</span>
+          <div class="pbar-wrap">
+            <div class="pbar-fill" id="pbar"></div>
+          </div>
+          <span id="q-pct">0%</span>
+        </div>
+      </header>
+
+      <div class="q-stage">
+        <div class="q-card" id="q-card">
+          <div class="q-badge" id="q-badge">01</div>
+          <h2 class="q-headline" id="q-headline">Question text</h2>
+          <ul class="opt-list" id="opt-list"></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ RESULT ═══════════════════════════════ -->
+  <section id="s-result" class="screen">
+    <div class="r-shell">
+
+      <div class="r-hero">
+        <p class="r-kicker">Your Career Profile</p>
+        <h2 class="r-combo" id="r-combo">Strategist + Builder</h2>
+        <p class="r-tagline" id="r-tagline"></p>
+      </div>
+
+      <div class="r-grid">
+
+        <div class="r-card r-card--careers">
+          <div class="rc-label">Suggested Career Paths</div>
+          <div class="career-chips" id="career-chips"></div>
+        </div>
+
+        <div class="r-card r-card--scores">
+          <div class="rc-label">Your Archetype Breakdown</div>
+          <div class="score-rows" id="score-rows"></div>
+        </div>
+
+      </div>
+
+      <div class="r-card r-card--form">
+        <div class="rc-label">Get Your Detailed Career Report</div>
+        <p class="form-sub">We'll send you a full personalised breakdown based on your results.</p>
+        <div id="form-fields">
+          <div class="form-row">
+            <input class="f-in" id="f-name"   type="text"  placeholder="Your Name"/>
+            <input class="f-in" id="f-email"  type="email" placeholder="Email Address"/>
+          </div>
+          <div class="form-row">
+            <input class="f-in" id="f-phone"  type="tel"   placeholder="Phone Number"/>
+            <select class="f-in f-sel" id="f-status">
+              <option value="" disabled selected>Current Status</option>
+              <option>School Student</option>
+              <option>College Student</option>
+              <option>Working Professional</option>
+            </select>
+          </div>
+          <button class="btn-cta btn-submit" id="btn-submit">Get My Detailed Career Report →</button>
+        </div>
+        <div class="form-thanks" id="form-thanks">
+          <div class="thanks-check">✓</div>
+          <p>Thank you! Your detailed career report will be sent to you soon.</p>
+        </div>
+      </div>
+
+      <div class="r-footer">
+        <button class="btn-ghost" id="btn-replay">↩ Play Again</button>
+      </div>
+
+    </div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
