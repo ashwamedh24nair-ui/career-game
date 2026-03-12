@@ -9,32 +9,23 @@
 </head>
 <body>
 
+  <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;display:none;"></canvas>
+
   <!-- ═══════════════════════════════ LANDING ═══════════════════════════════ -->
   <section id="s-landing" class="screen show">
     <div class="floating-thoughts">
-      <!-- TOP ZONE - scattered across top -->
-      <span class="ft" style="--x:32%;--y:3%;--s:17px;--o:0.62;--d:0s">"I don't like my job"</span>
-      <span class="ft" style="--x:62%;--y:2%;--s:16px;--o:0.58;--d:1.5s">"what should I do in life?"</span>
-
-      <!-- RIGHT EDGE - far right, won't overlap content -->
-      <span class="ft" style="--x:68%;--y:16%;--s:16px;--o:0.55;--d:3s">"this is not what I'm supposed to be doing"</span>
-      <span class="ft" style="--x:72%;--y:32%;--s:17px;--o:0.60;--d:5s">"maybe I should just quit"</span>
-      <span class="ft" style="--x:70%;--y:50%;--s:16px;--o:0.55;--d:2s">"I feel stuck"</span>
-      <span class="ft" style="--x:65%;--y:66%;--s:17px;--o:0.58;--d:4s">"if not this, then what?"</span>
-      <span class="ft" style="--x:68%;--y:82%;--s:16px;--o:0.55;--d:1s">"I chose the wrong degree"</span>
-
-      <!-- BOTTOM ZONE - scattered across bottom -->
-      <span class="ft" style="--x:32%;--y:88%;--s:17px;--o:0.60;--d:2.5s">"there has to be something better for me"</span>
-      <span class="ft" style="--x:55%;--y:93%;--s:16px;--o:0.55;--d:0.5s">"everyone else seems to know what they want"</span>
-
-      <!-- LEFT EDGE - just inside the cream panel (black panel ends ~22%) -->
-      <span class="ft" style="--x:23%;--y:12%;--s:17px;--o:0.60;--d:3.5s">"am I in the wrong career?"</span>
-      <span class="ft" style="--x:23%;--y:50%;--s:16px;--o:0.58;--d:1s">"I know this isn't for me"</span>
-      <span class="ft" style="--x:23%;--y:72%;--s:17px;--o:0.55;--d:4.5s">"I'm capable of more than this"</span>
-
-      <!-- 2 NEW PHRASES -->
-      <span class="ft" style="--x:23%;--y:30%;--s:16px;--o:0.60;--d:6s">"what am I even doing with my life?"</span>
-      <span class="ft" style="--x:65%;--y:95%;--s:17px;--o:0.58;--d:2s">"I don't want to waste another year"</span>
+      <span class="ft" style="--x:5%;--y:8%;--s:13px;--o:0.18;--d:0s">"I don't like my job"</span>
+      <span class="ft" style="--x:60%;--y:5%;--s:11px;--o:0.15;--d:1.5s">"what should I do in life?"</span>
+      <span class="ft" style="--x:72%;--y:20%;--s:13px;--o:0.14;--d:3s">"this is not what I'm supposed to be doing"</span>
+      <span class="ft" style="--x:3%;--y:35%;--s:12px;--o:0.18;--d:2s">"I know this isn't for me"</span>
+      <span class="ft" style="--x:55%;--y:42%;--s:11px;--o:0.14;--d:4s">"if not this, then what?"</span>
+      <span class="ft" style="--x:20%;--y:62%;--s:13px;--o:0.16;--d:1s">"am I in the wrong career?"</span>
+      <span class="ft" style="--x:68%;--y:68%;--s:12px;--o:0.18;--d:2.5s">"I feel stuck"</span>
+      <span class="ft" style="--x:5%;--y:78%;--s:13px;--o:0.14;--d:3.5s">"everyone else seems to know what they want"</span>
+      <span class="ft" style="--x:48%;--y:83%;--s:12px;--o:0.16;--d:0.5s">"I chose the wrong degree"</span>
+      <span class="ft" style="--x:75%;--y:88%;--s:11px;--o:0.18;--d:2s">"maybe I should just quit"</span>
+      <span class="ft" style="--x:28%;--y:91%;--s:13px;--o:0.14;--d:1s">"there has to be something better for me"</span>
+      <span class="ft" style="--x:12%;--y:22%;--s:12px;--o:0.16;--d:4.5s">"I'm capable of more than this"</span>
     </div>
     <div class="landing-left">
       <div class="left-tag">Career Discovery</div>
@@ -66,21 +57,39 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════ QUESTION ═══════════════════════════════ -->
-  <section id="s-question" class="screen">
+  <!-- ═══════════════════════════════ INTAKE ════════════════════════════════ -->
+  <section id="s-intake" class="screen">
     <div class="q-shell">
-
       <header class="q-header">
         <div class="q-logo">Career Discovery</div>
         <div class="q-meta">
-          <span id="q-counter">1 / 12</span>
+          <span class="intake-step-label">A few quick questions first</span>
+        </div>
+      </header>
+      <div class="q-stage">
+        <div class="q-card" id="intake-card">
+          <h2 class="q-headline" id="intake-headline"></h2>
+          <p class="intake-hint" id="intake-hint"></p>
+          <div id="intake-options"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ QUESTION ═══════════════════════════════ -->
+  <section id="s-question" class="screen">
+    <div class="q-shell">
+      <header class="q-header">
+        <div class="q-logo">Career Discovery</div>
+        <div class="q-meta">
+          <span id="q-counter">1 / 15</span>
           <div class="pbar-wrap">
             <div class="pbar-fill" id="pbar"></div>
           </div>
           <span id="q-pct">0%</span>
         </div>
       </header>
-
+      <div class="milestone-banner" id="milestone-banner"></div>
       <div class="q-stage">
         <div class="q-card" id="q-card">
           <div class="q-badge" id="q-badge">01</div>
@@ -88,7 +97,6 @@
           <ul class="opt-list" id="opt-list"></ul>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -98,34 +106,63 @@
 
       <div class="r-hero">
         <p class="r-kicker">Your Career Profile</p>
-        <h2 class="r-combo" id="r-combo">Strategist + Builder</h2>
+        <h2 class="r-combo" id="r-combo"></h2>
         <p class="r-tagline" id="r-tagline"></p>
       </div>
 
-      <div class="r-grid">
-
-        <div class="r-card r-card--careers">
-          <div class="rc-label">Suggested Career Paths</div>
-          <div class="career-chips" id="career-chips"></div>
-        </div>
-
-        <div class="r-card r-card--scores">
-          <div class="rc-label">Your Archetype Breakdown</div>
-          <div class="score-rows" id="score-rows"></div>
-        </div>
-
+      <!-- Description -->
+      <div class="r-card r-card--desc">
+        <p class="r-desc" id="r-desc"></p>
       </div>
 
+      <!-- Primary + Secondary notes -->
+      <div class="r-two-col">
+        <div class="r-card r-card--note">
+          <div class="rc-label rc-note-primary">Your Primary Strength</div>
+          <p class="r-note-text" id="r-primary-note"></p>
+        </div>
+        <div class="r-card r-card--note">
+          <div class="rc-label rc-note-secondary">What Your Secondary Adds</div>
+          <p class="r-note-text" id="r-secondary-note"></p>
+        </div>
+      </div>
+
+      <!-- Watch out -->
+      <div class="r-card r-card--watchout">
+        <div class="rc-label">Watch Out For</div>
+        <p class="r-note-text" id="r-watch-out"></p>
+      </div>
+
+      <!-- Verdict -->
+      <div id="r-verdict">
+        <div class="r-card r-card--verdict" id="r-verdict-card">
+          <div class="rc-label" id="r-verdict-label"></div>
+          <p class="r-verdict-text" id="r-verdict-text"></p>
+          <div class="verdict-chips" id="r-verdict-paths"></div>
+        </div>
+      </div>
+
+      <!-- Career cards -->
+      <div class="r-section-label">Roles That Suit Your Profile</div>
+      <div class="r-careers-grid" id="r-careers-grid"></div>
+
+      <!-- Score bars -->
+      <div class="r-card r-card--scores">
+        <div class="rc-label">Your Archetype Breakdown</div>
+        <div class="score-rows" id="score-rows"></div>
+      </div>
+
+      <!-- Form -->
       <div class="r-card r-card--form">
         <div class="rc-label">Take This Further</div>
-        <p class="form-sub">Your results are just the beginning. A career counsellor will personally review your profile and get in touch with you — completely free — to help you build a real plan.</p>
+        <p class="form-sub">Your results are just the beginning. Share your details and we'll reach out to schedule a free one-on-one consultation to help you build a real plan.</p>
         <div id="form-fields">
           <div class="form-row">
-            <input class="f-in" id="f-name"   type="text"  placeholder="Your Name"/>
-            <input class="f-in" id="f-email"  type="email" placeholder="Email Address"/>
+            <input class="f-in" id="f-name"  type="text"  placeholder="Your Name"/>
+            <input class="f-in" id="f-email" type="email" placeholder="Email Address"/>
           </div>
           <div class="form-row">
-            <input class="f-in" id="f-phone"  type="tel"   placeholder="Phone Number"/>
+            <input class="f-in" id="f-phone" type="tel" placeholder="Phone Number"/>
             <select class="f-in f-sel" id="f-status">
               <option value="" disabled selected>Current Status</option>
               <option>School Student</option>
@@ -133,16 +170,16 @@
               <option>Working Professional</option>
             </select>
           </div>
-          <button class="btn-cta btn-submit" id="btn-submit">Yes, I Want My Free Career Report →</button>
+          <button class="btn-cta btn-submit" id="btn-submit">Yes, I Want My Free Consultation →</button>
         </div>
         <div class="form-thanks" id="form-thanks">
           <div class="thanks-check">✓</div>
-          <p>Thank you! Your detailed career report will be sent to you soon.</p>
+          <p>We'll be in touch soon. A real conversation, not a template.</p>
         </div>
       </div>
 
       <div class="r-footer">
-        <button class="btn-ghost" id="btn-replay">↩ Play Again</button>
+        <button class="btn-ghost" id="btn-replay">↩ Start Over</button>
       </div>
 
     </div>
