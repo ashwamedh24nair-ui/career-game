@@ -254,10 +254,10 @@ body {
   font-size: var(--s);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: var(--ink);
+  color: var(--ink-2);
   opacity: 0;
   white-space: nowrap;
-  animation: fadeThought 6s ease-in-out infinite;
+  animation: fadeThought 7s ease-in-out infinite;
   animation-delay: var(--d);
 }
 
