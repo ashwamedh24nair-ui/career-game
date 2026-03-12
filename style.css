@@ -221,17 +221,18 @@ body {
   font-size: var(--s);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: var(--ink);
+  color: var(--ink-2);
   opacity: 0;
   white-space: nowrap;
-  animation: fadeThought 6s ease-in-out infinite;
+  animation: fadeThought 9s ease-in-out infinite;
   animation-delay: var(--d);
 }
 @keyframes fadeThought {
-  0%   { opacity: 0;        transform: translateY(4px); }
-  20%  { opacity: var(--o); transform: translateY(0px); }
-  80%  { opacity: var(--o); transform: translateY(0px); }
-  100% { opacity: 0;        transform: translateY(-4px); }
+  0%   { opacity: 0;        transform: translateY(12px); }
+  15%  { opacity: var(--o); transform: translateY(0px); }
+  50%  { opacity: var(--o); transform: translateY(-10px); }
+  85%  { opacity: var(--o); transform: translateY(0px); }
+  100% { opacity: 0;        transform: translateY(12px); }
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -407,7 +408,8 @@ body {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 15px;
+  font-size: 22px;
+  font-weight: 600;
   color: var(--gold);
   letter-spacing: .5px;
   height: 0;
@@ -417,9 +419,9 @@ body {
   margin-bottom: 0;
 }
 .milestone-banner.show {
-  height: 32px;
+  height: 44px;
   opacity: 1;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 /* ── INTAKE ─────────────────────────────────────────────────────── */
@@ -549,7 +551,7 @@ body {
 .r-hero { text-align: center; margin-bottom: 8px; }
 
 .r-kicker {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gold);
@@ -568,7 +570,7 @@ body {
 
 .r-combo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 6vw, 68px);
+  font-size: clamp(48px, 7vw, 80px);
   font-weight: 700;
   color: var(--ink);
   line-height: 1.1;
@@ -576,7 +578,6 @@ body {
 }
 
 .r-tagline {
-  font-size: 16px;
   color: var(--ink-2);
   line-height: 1.8;
   font-weight: 300;
@@ -584,7 +585,7 @@ body {
   margin: 0 auto;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* cards */
@@ -715,7 +716,7 @@ body {
 
 /* Score bars */
 .r-card--scores { }
-.score-rows { display: flex; flex-direction: column; gap: 14px; }
+.score-rows { display: flex; flex-direction: column; gap: 18px; }
 .s-row { display: flex; flex-direction: column; gap: 5px; }
 .s-info { display: flex; justify-content: space-between; align-items: baseline; }
 .s-name {
@@ -737,6 +738,33 @@ body {
 .s-fill.analyst    { background: var(--analyst); }
 .s-fill.creator    { background: var(--creator); }
 .s-fill.connector  { background: var(--connector); }
+.s-desc {
+  font-size: 12px;
+  color: var(--ink-3);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+
+/* Back button */
+.q-back-row {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--paper-2);
+}
+.btn-back {
+  background: transparent;
+  border: none;
+  color: var(--ink-3);
+  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color .2s ease;
+  letter-spacing: .2px;
+}
+.btn-back:hover { color: var(--ink); }
+.btn-back.hidden { display: none; }
 
 /* Form */
 .r-card--form { }
