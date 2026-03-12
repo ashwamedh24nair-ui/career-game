@@ -41,11 +41,11 @@ const INDUSTRY_FIT = {
    ARCHETYPES
 ════════════════════════════════════════════════════════════════ */
 const ARCHETYPES = {
-  strategist: { label: "Strategist", desc: "You think in systems. You see the big picture, plan ahead, and thrive when solving complex problems with structure and clarity." },
-  builder:    { label: "Builder",    desc: "You need to make things. Ideas that stay theoretical feel unfinished to you. You're happiest when you're executing and shipping something real." },
-  analyst:    { label: "Analyst",    desc: "You go deep. You're patient with complexity, careful with conclusions, and driven by evidence over gut feel." },
-  creator:    { label: "Creator",    desc: "You have a distinct voice and a compulsion to express. You think about how things feel and resonate — not just whether they work." },
-  connector:  { label: "Connector",  desc: "People open up to you. You understand humans intuitively, build trust quickly, and bring out the best in whoever you work with." }
+  strategist: { label: "Strategist" },
+  builder:    { label: "Builder"    },
+  analyst:    { label: "Analyst"    },
+  creator:    { label: "Creator"    },
+  connector:  { label: "Connector"  }
 };
 
 /* ════════════════════════════════════════════════════════════════
@@ -459,7 +459,6 @@ function buildIntakeFlow(type) {
 let scores  = {};
 let current = 0;
 let locked  = false;
-let answerHistory = []; // tracks which arc was picked per question
 
 /* ════════════════════════════════════════════════════════════════
    UTILS
@@ -576,7 +575,6 @@ function startQuiz() {
   scores  = { strategist:0, builder:0, analyst:0, creator:0, connector:0 };
   current = 0;
   locked  = false;
-  answerHistory = [];
   showScreen('s-question');
   renderQuestion();
 }
@@ -616,14 +614,6 @@ function renderQuestion() {
   });
 
   animateCard(document.getElementById('q-card'));
-
-  // Show/hide back button
-  const backBtn = document.getElementById('btn-back');
-  if (current === 0) {
-    backBtn.classList.add('hidden');
-  } else {
-    backBtn.classList.remove('hidden');
-  }
 }
 
 function pick(btn, arc) {
@@ -632,7 +622,6 @@ function pick(btn, arc) {
   document.querySelectorAll('.opt-item').forEach(b => b.classList.remove('chosen'));
   btn.classList.add('chosen');
   scores[arc]++;
-  answerHistory.push(arc);
 
   const isLast = (current === QUESTIONS.length - 1);
   setTimeout(() => {
@@ -644,14 +633,6 @@ function pick(btn, arc) {
       setTimeout(() => showResult(), 700);
     }
   }, isLast ? 650 : 420);
-}
-
-function goBack() {
-  if (current === 0 || answerHistory.length === 0) return;
-  const prevArc = answerHistory.pop();
-  scores[prevArc]--;
-  current--;
-  renderQuestion();
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -817,7 +798,6 @@ function showResult() {
       <div class="s-track">
         <div class="s-fill ${arc}" data-w="${Math.round((val/total)*100)}%" style="width:0%"></div>
       </div>
-      <p class="s-desc">${ARCHETYPES[arc].desc}</p>
     </div>
   `).join('');
 
@@ -853,9 +833,9 @@ function submitForm() {
   if (!name || !email || !phone || !status) return;
 
   const sorted = Object.entries(scores).sort((a,b) => b[1]-a[1]);
-  fetch('https://formspree.io/f/xkoqopqv', {
+  fetch('https://script.google.com/macros/s/AKfycbxl2vCg5RMD8ganJIncR7CC8G4kunfvgw-1i4Opzd1UfvyhOtsGTTbxWBD8CmYsgzS9AQ/exec', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name, email, phone, status,
       result:          `${ARCHETYPES[sorted[0][0]].label} + ${ARCHETYPES[sorted[1][0]].label}`,
@@ -878,4 +858,3 @@ function submitForm() {
 document.getElementById('btn-start').addEventListener('click', startIntake);
 document.getElementById('btn-submit').addEventListener('click', submitForm);
 document.getElementById('btn-replay').addEventListener('click', startIntake);
-document.getElementById('btn-back').addEventListener('click', goBack);
