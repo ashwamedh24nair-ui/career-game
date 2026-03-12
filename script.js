@@ -459,6 +459,7 @@ function buildIntakeFlow(type) {
 let scores  = {};
 let current = 0;
 let locked  = false;
+let answerHistory = [];
 
 /* ════════════════════════════════════════════════════════════════
    UTILS
@@ -575,6 +576,7 @@ function startQuiz() {
   scores  = { strategist:0, builder:0, analyst:0, creator:0, connector:0 };
   current = 0;
   locked  = false;
+  answerHistory = [];
   showScreen('s-question');
   renderQuestion();
 }
@@ -614,6 +616,9 @@ function renderQuestion() {
   });
 
   animateCard(document.getElementById('q-card'));
+
+  const backBtn = document.getElementById('btn-back');
+  if (backBtn) backBtn.classList.toggle('hidden', current === 0);
 }
 
 function pick(btn, arc) {
@@ -622,6 +627,7 @@ function pick(btn, arc) {
   document.querySelectorAll('.opt-item').forEach(b => b.classList.remove('chosen'));
   btn.classList.add('chosen');
   scores[arc]++;
+  answerHistory.push(arc);
 
   const isLast = (current === QUESTIONS.length - 1);
   setTimeout(() => {
@@ -633,6 +639,14 @@ function pick(btn, arc) {
       setTimeout(() => showResult(), 700);
     }
   }, isLast ? 650 : 420);
+}
+
+function goBack() {
+  if (current === 0 || answerHistory.length === 0) return;
+  const prevArc = answerHistory.pop();
+  scores[prevArc]--;
+  current--;
+  renderQuestion();
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -833,41 +847,19 @@ function submitForm() {
   if (!name || !email || !phone || !status) return;
 
   const sorted = Object.entries(scores).sort((a,b) => b[1]-a[1]);
-  const top1   = sorted[0][0];
-  const top2   = sorted[1][0];
-  const combo  = getCombo(top1, top2);
-  const total  = QUESTIONS.length;
-
-  const scoreBreakdown = sorted.map(([arc, val]) =>
-    `${ARCHETYPES[arc].label}: ${val}/${total}`
-  ).join(' | ');
-
-  const careerList = combo.careers.map(c => c.title).join(', ');
-
-  const payload = JSON.stringify({
-    name, email, phone, status,
-    result:            `${ARCHETYPES[top1].label} + ${ARCHETYPES[top2].label}`,
-    tagline:           combo.tagline,
-    description:       combo.description,
-    primary_strength:  combo.primaryNote,
-    secondary_adds:    combo.secondaryNote,
-    watch_out_for:     combo.watchOut,
-    suggested_careers: careerList,
-    score_breakdown:   scoreBreakdown,
-    user_type:         intakeData.userType        || '—',
-    study_field:       intakeData.studyField      || '—',
-    current_industry:  intakeData.currentIndustry || '—',
-    target_industry:   intakeData.targetIndustry  || '—',
-    wants_to_stay:     intakeData.wantsToStay     || '—'
-  });
-
-  const formData = new FormData();
-  formData.append('data', payload);
-
-  fetch('https://script.google.com/macros/s/AKfycbxl2vCg5RMD8ganJIncR7CC8G4kunfvgw-1i4Opzd1UfvyhOtsGTTbxWBD8CmYsgzS9AQ/exec', {
+  fetch('https://formspree.io/f/xkoqopqv', {
     method: 'POST',
-    mode: 'no-cors',
-    body: formData
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      name, email, phone, status,
+      result:          `${ARCHETYPES[sorted[0][0]].label} + ${ARCHETYPES[sorted[1][0]].label}`,
+      scores:          JSON.stringify(scores),
+      userType:        intakeData.userType        || '—',
+      studyField:      intakeData.studyField      || '—',
+      currentIndustry: intakeData.currentIndustry || '—',
+      targetIndustry:  intakeData.targetIndustry  || '—',
+      wantsToStay:     intakeData.wantsToStay     || '—'
+    })
   });
 
   document.getElementById('form-fields').style.display = 'none';
@@ -880,3 +872,4 @@ function submitForm() {
 document.getElementById('btn-start').addEventListener('click', startIntake);
 document.getElementById('btn-submit').addEventListener('click', submitForm);
 document.getElementById('btn-replay').addEventListener('click', startIntake);
+document.getElementById('btn-back').addEventListener('click', goBack);
