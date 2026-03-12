@@ -154,6 +154,34 @@ body {
   margin-bottom: 36px;
 }
 
+.landing-para {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+.landing-para p {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.landing-para p:nth-child(2) {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.landing-para strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .landing-points {
   list-style: none;
   margin-bottom: 20px;
