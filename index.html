@@ -10,6 +10,8 @@
     gtag('js', new Date());
     gtag('config', 'G-WSPEXQ5QPY');
   </script>
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Career Discovery</title>
   <link rel="stylesheet" href="style.css"/>
@@ -79,6 +81,9 @@
           <h2 class="q-headline" id="intake-headline"></h2>
           <p class="intake-hint" id="intake-hint"></p>
           <div id="intake-options"></div>
+          <div class="q-back-row">
+            <button class="btn-back hidden" id="btn-intake-back">← Back</button>
+          </div>
         </div>
       </div>
     </div>
@@ -103,6 +108,9 @@
           <div class="q-badge" id="q-badge">01</div>
           <h2 class="q-headline" id="q-headline">Question text</h2>
           <ul class="opt-list" id="opt-list"></ul>
+          <div class="q-back-row">
+            <button class="btn-back hidden" id="btn-back">← Back</button>
+          </div>
         </div>
       </div>
     </div>
@@ -171,12 +179,6 @@
           </div>
           <div class="form-row">
             <input class="f-in" id="f-phone" type="tel" placeholder="Phone Number"/>
-            <select class="f-in f-sel" id="f-status">
-              <option value="" disabled selected>Current Status</option>
-              <option>School Student</option>
-              <option>College Student</option>
-              <option>Working Professional</option>
-            </select>
           </div>
           <button class="btn-cta btn-submit" id="btn-submit">Yes, I Want My Free Consultation →</button>
         </div>
