@@ -221,17 +221,18 @@ body {
   font-size: var(--s);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: var(--ink);
+  color: var(--ink-2);
   opacity: 0;
   white-space: nowrap;
-  animation: fadeThought 6s ease-in-out infinite;
+  animation: fadeThought 9s ease-in-out infinite;
   animation-delay: var(--d);
 }
 @keyframes fadeThought {
-  0%   { opacity: 0;        transform: translateY(4px); }
-  20%  { opacity: var(--o); transform: translateY(0px); }
-  80%  { opacity: var(--o); transform: translateY(0px); }
-  100% { opacity: 0;        transform: translateY(-4px); }
+  0%   { opacity: 0;        transform: translateY(12px); }
+  15%  { opacity: var(--o); transform: translateY(0px); }
+  50%  { opacity: var(--o); transform: translateY(-10px); }
+  85%  { opacity: var(--o); transform: translateY(0px); }
+  100% { opacity: 0;        transform: translateY(12px); }
 }
 
 /* ══════════════════════════════════════════════════════════════════
