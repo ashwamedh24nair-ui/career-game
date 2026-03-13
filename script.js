@@ -850,6 +850,7 @@ function submitForm() {
   const top1   = sorted[0][0];
   const top2   = sorted[1][0];
   const combo  = getCombo(top1, top2);
+  const key    = [top1, top2].sort().join('+');
   const total  = QUESTIONS.length;
 
   const scoreBreakdown = sorted.map(([arc, val]) =>
@@ -857,6 +858,26 @@ function submitForm() {
   ).join(' | ');
 
   const careerList = combo.careers.map(c => c.title).join(', ');
+
+  const verdict = getVerdict(key);
+  const verdictSummary = verdict
+    ? `${verdict.label} — ${verdict.text}`
+    : 'No verdict';
+
+  // Readable stream/background label for students
+  const streamMap = {
+    commerce:    'Commerce / Finance / Business',
+    engineering: 'Engineering / Computer Science',
+    arts:        'Arts / Humanities / Social Sciences',
+    science:     'Science / Life Sciences',
+    law:         'Law',
+    design:      'Design / Architecture / Media',
+    creative:    'Design / Media / Creative',
+    other:       'Other'
+  };
+  const streamLabel = intakeData.studyField
+    ? (streamMap[intakeData.studyField] || intakeData.studyField)
+    : '—';
 
   const params = new URLSearchParams({
     name, email, phone, status,
@@ -868,8 +889,9 @@ function submitForm() {
     watch_out_for:     combo.watchOut,
     suggested_careers: careerList,
     score_breakdown:   scoreBreakdown,
+    verdict:           verdictSummary,
     user_type:         intakeData.userType        || '—',
-    study_field:       intakeData.studyField      || '—',
+    study_field:       streamLabel,
     current_industry:  intakeData.currentIndustry || '—',
     target_industry:   intakeData.targetIndustry  || '—',
     wants_to_stay:     intakeData.wantsToStay     || '—'
