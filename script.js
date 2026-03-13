@@ -460,6 +460,7 @@ let scores  = {};
 let current = 0;
 let locked  = false;
 let answerHistory = [];
+let intakeHistory = []; // tracks intake steps for back navigation
 
 /* ════════════════════════════════════════════════════════════════
    UTILS
@@ -477,6 +478,7 @@ function startIntake() {
   intakeData  = { userType:null, studyField:null, currentIndustry:null, targetIndustry:null, wantsToStay:null };
   intakeSteps = [];
   intakeIndex = 0;
+  intakeHistory = [];
   showScreen('s-intake');
   renderIntakeStep(STEP_WHO);
 }
@@ -495,6 +497,10 @@ function renderIntakeStep(step) {
   hint.textContent = step.hint || '';
   const container = document.getElementById('intake-options');
   container.innerHTML = '';
+
+  // Show/hide intake back button
+  const intakeBackBtn = document.getElementById('btn-intake-back');
+  if (intakeBackBtn) intakeBackBtn.classList.toggle('hidden', intakeHistory.length === 0);
 
   if (step.type === 'cards') {
     container.className = 'intake-cards';
@@ -542,6 +548,14 @@ function renderIntakeStep(step) {
 }
 
 function handleIntakeAnswer(step, value) {
+  // Save state before moving forward so we can go back
+  intakeHistory.push({
+    step,
+    intakeDataSnapshot: { ...intakeData },
+    intakeStepsSnapshot: [...intakeSteps],
+    intakeIndexSnapshot: intakeIndex
+  });
+
   if (step.id === 'userType') {
     intakeData.userType = value;
     intakeSteps = buildIntakeFlow(value);
@@ -567,6 +581,15 @@ function nextIntakeStep() {
   } else {
     startQuiz();
   }
+}
+
+function goIntakeBack() {
+  if (intakeHistory.length === 0) return;
+  const prev = intakeHistory.pop();
+  Object.assign(intakeData, prev.intakeDataSnapshot);
+  intakeSteps = prev.intakeStepsSnapshot;
+  intakeIndex = prev.intakeIndexSnapshot;
+  renderIntakeStep(prev.step);
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -819,7 +842,6 @@ function showResult() {
   document.getElementById('form-fields').style.display = 'block';
   document.getElementById('form-thanks').style.display = 'none';
   ['f-name','f-email','f-phone'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('f-status').value = '';
 
   showScreen('s-result');
 
@@ -834,17 +856,15 @@ function showResult() {
    FORM
 ════════════════════════════════════════════════════════════════ */
 function submitForm() {
-  const name   = document.getElementById('f-name').value.trim();
-  const email  = document.getElementById('f-email').value.trim();
-  const phone  = document.getElementById('f-phone').value.trim();
-  const status = document.getElementById('f-status').value;
+  const name  = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
 
   ['f-name','f-email','f-phone'].forEach(id => {
     document.getElementById(id).style.borderColor =
       document.getElementById(id).value.trim() ? '' : '#c44a24';
   });
-  document.getElementById('f-status').style.borderColor = status ? '' : '#c44a24';
-  if (!name || !email || !phone || !status) return;
+  if (!name || !email || !phone) return;
 
   const sorted = Object.entries(scores).sort((a,b) => b[1]-a[1]);
   const top1   = sorted[0][0];
@@ -864,7 +884,10 @@ function submitForm() {
     ? `${verdict.label} — ${verdict.text}`
     : 'No verdict';
 
-  // Readable stream/background label for students
+  const otherFields = verdict && verdict.paths && verdict.paths.length
+    ? verdict.paths.join(', ')
+    : '—';
+
   const streamMap = {
     commerce:    'Commerce / Finance / Business',
     engineering: 'Engineering / Computer Science',
@@ -880,7 +903,8 @@ function submitForm() {
     : '—';
 
   const params = new URLSearchParams({
-    name, email, phone, status,
+    name, email, phone,
+    status:            intakeData.userType || '—',
     result:            `${ARCHETYPES[top1].label} + ${ARCHETYPES[top2].label}`,
     tagline:           combo.tagline,
     description:       combo.description,
@@ -888,6 +912,7 @@ function submitForm() {
     secondary_adds:    combo.secondaryNote,
     watch_out_for:     combo.watchOut,
     suggested_careers: careerList,
+    other_fields:      otherFields,
     score_breakdown:   scoreBreakdown,
     verdict:           verdictSummary,
     user_type:         intakeData.userType        || '—',
@@ -913,3 +938,4 @@ document.getElementById('btn-start').addEventListener('click', startIntake);
 document.getElementById('btn-submit').addEventListener('click', submitForm);
 document.getElementById('btn-replay').addEventListener('click', startIntake);
 document.getElementById('btn-back').addEventListener('click', goBack);
+document.getElementById('btn-intake-back').addEventListener('click', goIntakeBack);
