@@ -713,6 +713,16 @@ body {
   line-height: 1.6;
   font-weight: 300;
 }
+.rci-day {
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--paper-2);
+}
 
 /* Score bars */
 .r-card--scores { }
