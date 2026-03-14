@@ -59,12 +59,12 @@ const COMBOS = {
     secondaryNote: "You don't build blindly. You track, measure, question, adjust. Your instincts are good — but you always check them.",
     watchOut: "You can get so deep in the data that you delay action longer than you should. Sometimes you need to ship the imperfect thing and learn from reality instead of projections.",
     careers: [
-      { title: "Growth Manager", why: "Data-driven building is exactly what this role demands" },
-      { title: "Product Analytics", why: "You understand both the product and the numbers behind it" },
-      { title: "Startup Operations", why: "Building systems that actually scale" },
-      { title: "Strategy Consultant", why: "You bring analytical rigour and a bias for action" },
-      { title: "VC / Investment Analyst", why: "You evaluate businesses deeply and spot what can be built" },
-      { title: "Entrepreneur", why: "Especially where you can test and measure your way forward" }
+      { title: "Growth Manager",        why: "Data-driven building is exactly what this role demands",              dayInLife: "Most days you're running experiments, reading the numbers, and deciding what to double down on or kill." },
+      { title: "Product Analytics",     why: "You understand both the product and the numbers behind it",           dayInLife: "You spend your time buried in dashboards and user behaviour data, translating it into decisions the product team can actually act on." },
+      { title: "Startup Operations",    why: "Building systems that actually scale",                                dayInLife: "You're the person making sure the chaos runs smoothly — building processes, tracking what matters, fixing what's breaking." },
+      { title: "Strategy Consultant",   why: "You bring analytical rigour and a bias for action",                  dayInLife: "You fly into a problem, spend weeks understanding it deeply, build a recommendation, present it to leadership, and move on to the next one." },
+      { title: "VC / Investment Analyst", why: "You evaluate businesses deeply and spot what can be built",        dayInLife: "You read pitch decks, build models, talk to founders, and try to figure out which businesses are real before anyone else does." },
+      { title: "Entrepreneur",          why: "Especially where you can test and measure your way forward",         dayInLife: "No two days look the same — you're building, selling, fixing, and questioning everything simultaneously." }
     ]
   },
   "analyst+connector": {
@@ -74,12 +74,12 @@ const COMBOS = {
     secondaryNote: "You genuinely care about the person behind the data. The human element is never just a variable to you.",
     watchOut: "You can get caught between head and heart. When data says one thing and a person needs another, you can freeze. You need to get comfortable making calls that won't please everyone.",
     careers: [
-      { title: "People Analytics / HR Strategy", why: "Where data meets human behaviour at scale" },
-      { title: "Career Counselling / Coaching", why: "Understanding people deeply is the whole job" },
-      { title: "Customer Research", why: "You understand users both as data points and as people" },
-      { title: "UX Research", why: "Empathy and evidence — your exact combination" },
-      { title: "Behavioural Economist", why: "You're fascinated by why people do what they do" },
-      { title: "Education / Edtech", why: "You can design learning that actually works for people" }
+      { title: "People Analytics / HR Strategy", why: "Where data meets human behaviour at scale",                 dayInLife: "You sit between the data team and the people team, turning workforce numbers into decisions about hiring, culture and retention." },
+      { title: "Career Counselling / Coaching",  why: "Understanding people deeply is the whole job",             dayInLife: "You spend your days in one-on-one conversations helping people understand themselves better and figure out what to do next." },
+      { title: "Customer Research",              why: "You understand users both as data points and as people",    dayInLife: "You run surveys, conduct interviews, analyse responses, and turn what customers say into something the business can actually use." },
+      { title: "UX Research",                    why: "Empathy and evidence — your exact combination",            dayInLife: "You watch real people use products, figure out where they get confused or frustrated, and tell the design team what actually needs to change." },
+      { title: "Behavioural Economist",          why: "You're fascinated by why people do what they do",          dayInLife: "You study why people make the decisions they make — and design systems, policies or products that account for how humans actually behave." },
+      { title: "Education / Edtech",             why: "You can design learning that actually works for people",   dayInLife: "You design learning experiences, figure out what makes content stick, and obsess over whether students are actually getting it." }
     ]
   },
   "analyst+creator": {
@@ -89,12 +89,12 @@ const COMBOS = {
     secondaryNote: "You think about how ideas are communicated, not just whether they're correct. You have a natural instinct for narrative.",
     watchOut: "You can get stuck in the research phase because it feels safer than putting your interpretation out there. At some point you have to commit to a point of view.",
     careers: [
-      { title: "Data Storytelling / Journalist", why: "Finding and telling true stories with numbers" },
-      { title: "Research & Strategy", why: "Insight work that actually influences decisions" },
-      { title: "Product Marketing", why: "Understanding the data and making it compelling" },
-      { title: "Brand Strategist", why: "You build narratives grounded in real insight" },
-      { title: "Insights Lead", why: "Turning what you know into what the business should do" },
-      { title: "Content Strategist", why: "You create with purpose and back it up with evidence" }
+      { title: "Data Storytelling / Journalist", why: "Finding and telling true stories with numbers",            dayInLife: "You find a number that nobody's paying attention to, figure out why it matters, and write the piece that makes people care." },
+      { title: "Research & Strategy",            why: "Insight work that actually influences decisions",          dayInLife: "You spend weeks going deep on a question, then distill it into a clear point of view that actually influences what the organisation does." },
+      { title: "Product Marketing",              why: "Understanding the data and making it compelling",          dayInLife: "You understand the product deeply, understand the customer deeply, and figure out how to connect those two things in a way that drives growth." },
+      { title: "Brand Strategist",               why: "You build narratives grounded in real insight",           dayInLife: "You help companies figure out what they stand for and how to say it — grounded in real insight, not just creative intuition." },
+      { title: "Insights Lead",                  why: "Turning what you know into what the business should do",  dayInLife: "You run the research function, own the findings, and make sure the organisation is making decisions based on what's actually true." },
+      { title: "Content Strategist",             why: "You create with purpose and back it up with evidence",    dayInLife: "You decide what to say, to whom, when, and why — making sure every piece of content is doing a specific job rather than just filling space." }
     ]
   },
   "analyst+strategist": {
@@ -104,12 +104,12 @@ const COMBOS = {
     secondaryNote: "You don't stop at the question. You go find the answer — in the data, the numbers, the research. Your opinions are always backed by something real.",
     watchOut: "Analysis paralysis is your shadow. You can keep digging for certainty when the moment actually calls for a decision. At some point, good enough data is good enough.",
     careers: [
-      { title: "Management Consulting", why: "Strategy plus evidence is literally the job" },
-      { title: "Equity Research / Investment Analysis", why: "Deep thinking about how businesses really work" },
-      { title: "Corporate Strategy", why: "You set direction and you can prove why it's right" },
-      { title: "Business Analytics", why: "Turning messy data into clear decisions" },
-      { title: "Policy / Research Roles", why: "Where rigour actually changes things" },
-      { title: "VC / Private Equity", why: "You evaluate companies better than most" }
+      { title: "Management Consulting",              why: "Strategy plus evidence is literally the job",          dayInLife: "You parachute into complex business problems, spend weeks building a rigorous point of view, and present recommendations to senior leaders." },
+      { title: "Equity Research / Investment Analysis", why: "Deep thinking about how businesses really work",   dayInLife: "You cover a set of companies deeply — reading every filing, building models, forming views on what the market is missing." },
+      { title: "Corporate Strategy",                 why: "You set direction and you can prove why it's right",  dayInLife: "You work directly with the leadership team on the biggest questions the company faces — where to play, how to win, what to stop doing." },
+      { title: "Business Analytics",                 why: "Turning messy data into clear decisions",             dayInLife: "You own the data that the business runs on — building dashboards, running analyses, and making sure decisions are grounded in reality." },
+      { title: "Policy / Research Roles",            why: "Where rigour actually changes things",                dayInLife: "You study complex systems — economic, social, political — and produce work that informs how governments or institutions should act." },
+      { title: "VC / Private Equity",                why: "You evaluate companies better than most",             dayInLife: "You evaluate businesses for a living — understanding their models, their markets, their risks, and deciding whether they're worth betting on." }
     ]
   },
   "builder+connector": {
@@ -119,12 +119,12 @@ const COMBOS = {
     secondaryNote: "You're unusually good at getting people to care about what you're building. You sell ideas without it feeling like selling.",
     watchOut: "You can spend so much energy on people — recruiting them, supporting them, keeping them happy — that the actual building slows down. Protect your maker time.",
     careers: [
-      { title: "Community Builder / Platform Product", why: "You understand people and systems at the same time" },
-      { title: "Sales / BD at a Startup", why: "Where relationships become real revenue" },
-      { title: "Founder (people-first)", why: "Edtech, HR tech, social impact — you're built for this" },
-      { title: "Program / Operations Manager", why: "Building things that run on people" },
-      { title: "Customer Success Lead", why: "You keep users and understand how to grow them" },
-      { title: "HR Tech / Future of Work", why: "A growing space that needs exactly your instincts" }
+      { title: "Community Builder / Platform Product", why: "You understand people and systems at the same time", dayInLife: "You spend your days thinking about how to get people to show up, engage, and keep coming back — and then building the things that make that happen." },
+      { title: "Sales / BD at a Startup",             why: "Where relationships become real revenue",            dayInLife: "You're on calls, in meetings, writing proposals, and figuring out how to turn conversations into revenue for something that's still being built." },
+      { title: "Founder (people-first)",               why: "Edtech, HR tech, social impact — you're built for this", dayInLife: "You're hiring, managing, selling, and building culture simultaneously — the product is almost secondary to the team you're assembling around it." },
+      { title: "Program / Operations Manager",         why: "Building things that run on people",               dayInLife: "You run the systems that keep everything moving — coordinating across teams, removing blockers, making sure things actually get done." },
+      { title: "Customer Success Lead",                why: "You keep users and understand how to grow them",    dayInLife: "You own the relationship after the sale — making sure customers get value, solving their problems, and turning them into people who stay and refer others." },
+      { title: "HR Tech / Future of Work",             why: "A growing space that needs exactly your instincts", dayInLife: "You build products or programs that change how people work — better hiring, better management, better culture at scale." }
     ]
   },
   "builder+creator": {
@@ -134,12 +134,12 @@ const COMBOS = {
     secondaryNote: "You have a strong aesthetic sensibility and an instinct for what will resonate. Your work has a voice.",
     watchOut: "Perfectionism dressed up as creativity. At some point the thing needs to ship — even if it's not exactly what you imagined.",
     careers: [
-      { title: "Product Design / UX", why: "Building things that work and feel good" },
-      { title: "Creative Entrepreneur", why: "Your own brand, your own rules" },
-      { title: "Content Creator / Media", why: "Making things for an audience that actually cares" },
-      { title: "Startup in Creative Industries", why: "Fashion, design, media, edtech — all fit" },
-      { title: "Brand Builder", why: "You understand what makes something feel real" },
-      { title: "Art Director / Creative Lead", why: "Where taste meets execution" }
+      { title: "Product Design / UX",           why: "Building things that work and feel good",                  dayInLife: "You spend your days going between user research, wireframes, and finished designs — obsessing over whether the thing you're making actually works and feels right." },
+      { title: "Creative Entrepreneur",          why: "Your own brand, your own rules",                          dayInLife: "You run the whole thing — the creative vision, the business model, the distribution — and every day looks different because you built it that way." },
+      { title: "Content Creator / Media",        why: "Making things for an audience that actually cares",       dayInLife: "You make things for an audience — writing, filming, editing, publishing — and you track what lands and what doesn't obsessively." },
+      { title: "Startup in Creative Industries", why: "Fashion, design, media, edtech — all fit",               dayInLife: "You're building a business in fashion, design, media or education — which means the product has to work and look good at the same time." },
+      { title: "Brand Builder",                  why: "You understand what makes something feel real",           dayInLife: "You shape how a company is perceived — the visual identity, the tone of voice, the feeling someone gets when they encounter it for the first time." },
+      { title: "Art Director / Creative Lead",   why: "Where taste meets execution",                             dayInLife: "You set the creative direction for a team or project — making sure every output meets a standard that most people couldn't articulate but everyone can feel." }
     ]
   },
   "builder+strategist": {
@@ -149,12 +149,12 @@ const COMBOS = {
     secondaryNote: "The Builder in you refuses to let good thinking stay on paper. You have an itch to make things real. Ideas that don't become prototypes feel like unfinished sentences.",
     watchOut: "You can fall in love with your own plan. When you've already seen the answer, other people's input can feel like noise — and that's when you miss things that matter.",
     careers: [
-      { title: "Product Manager", why: "You think strategically and ship things — that's the whole job" },
-      { title: "Startup Founder", why: "You're built for the chaos of zero-to-one" },
-      { title: "Strategy & Operations", why: "Where big thinking meets real execution" },
-      { title: "Chief of Staff", why: "You operate closest to the decisions that matter" },
-      { title: "Management Consultant", why: "You solve hard problems and move on to the next one" },
-      { title: "VC-backed Founder", why: "Your profile is exactly what investors back" }
+      { title: "Product Manager",        why: "You think strategically and ship things — that's the whole job",  dayInLife: "You sit between engineering, design and business — deciding what gets built, why, and in what order, and living with the consequences of those calls." },
+      { title: "Startup Founder",        why: "You're built for the chaos of zero-to-one",                      dayInLife: "You make hundreds of decisions a week with incomplete information, build the team, find the customers, and figure out the business model as you go." },
+      { title: "Strategy & Operations",  why: "Where big thinking meets real execution",                         dayInLife: "You work on the most important problems the company faces — part strategic thinking, part rolling up your sleeves and making things actually happen." },
+      { title: "Chief of Staff",         why: "You operate closest to the decisions that matter",               dayInLife: "You operate as an extension of the CEO — sitting in every important room, owning the things that fall between functions, and making the organisation run better." },
+      { title: "Management Consultant",  why: "You solve hard problems and move on to the next one",            dayInLife: "You work on a new problem every few months — different industry, different challenge, same rigour — and you get very good at thinking fast under pressure." },
+      { title: "VC-backed Founder",      why: "Your profile is exactly what investors back",                    dayInLife: "You raise money, spend it carefully, build something people want, and report back to investors while trying not to run out of runway." }
     ]
   },
   "connector+creator": {
@@ -164,12 +164,12 @@ const COMBOS = {
     secondaryNote: "You never lose sight of your audience. Your creativity is always in service of connection, not just expression.",
     watchOut: "You can be so focused on how people receive your work that you hold back your actual perspective. The work that connects most is usually the most honest, not the most palatable.",
     careers: [
-      { title: "Content Creator / Writer", why: "Making things that genuinely move people" },
-      { title: "Brand & Community Building", why: "Creating culture, not just content" },
-      { title: "Counselling / Coaching", why: "Human work with a creative, empathetic edge" },
-      { title: "Social Impact Communications", why: "Stories that actually change minds" },
-      { title: "Marketing Lead", why: "You understand people and you can speak to them" },
-      { title: "Education / Edtech", why: "Learning works best when it's human and creative" }
+      { title: "Content Creator / Writer",        why: "Making things that genuinely move people",               dayInLife: "You make things that are meant to move people — and you spend a lot of time thinking about why something landed or didn't and what to do differently next time." },
+      { title: "Brand & Community Building",      why: "Creating culture, not just content",                     dayInLife: "You build the culture around a product or idea — the tone, the rituals, the feeling of belonging that makes people stay and bring others in." },
+      { title: "Counselling / Coaching",          why: "Human work with a creative, empathetic edge",            dayInLife: "You sit with people in hard moments, help them see themselves more clearly, and watch them make decisions they couldn't have made before talking to you." },
+      { title: "Social Impact Communications",    why: "Stories that actually change minds",                     dayInLife: "You tell the stories that make people care about causes they might otherwise scroll past — using creativity in service of something that actually matters." },
+      { title: "Marketing Lead",                  why: "You understand people and you can speak to them",        dayInLife: "You own how the brand speaks to the world — campaigns, content, channels — and you're always thinking about how the message lands on the other end." },
+      { title: "Education / Edtech",              why: "Learning works best when it's human and creative",       dayInLife: "You design the experience of learning — making complex things feel accessible, human and worth showing up for." }
     ]
   },
   "connector+strategist": {
@@ -179,12 +179,12 @@ const COMBOS = {
     secondaryNote: "You understand people intuitively. You read rooms, navigate relationships, and bring out the best in whoever you're working with.",
     watchOut: "You can prioritise keeping everyone happy over making the hard call. Sometimes the right strategy disappoints people — and you need to be okay with that.",
     careers: [
-      { title: "General Management / Leadership", why: "This combo is literally what good leadership looks like" },
-      { title: "HR & Organisational Development", why: "Building culture with real strategic intent" },
-      { title: "Sales Leadership", why: "Strategy plus relationships equals consistent results" },
-      { title: "Chief Operating Officer", why: "You align people around a vision and execute it" },
-      { title: "Founder", why: "Especially if your product involves people at the core" },
-      { title: "Management Consultant", why: "You understand both the problem and the people involved" }
+      { title: "General Management / Leadership",  why: "This combo is literally what good leadership looks like", dayInLife: "You run a team or a business unit — setting direction, making calls, developing people, and being accountable for outcomes you can't control entirely." },
+      { title: "HR & Organisational Development",  why: "Building culture with real strategic intent",           dayInLife: "You shape the culture, structure and capability of an organisation — the work nobody sees until something goes wrong or spectacularly right." },
+      { title: "Sales Leadership",                 why: "Strategy plus relationships equals consistent results",  dayInLife: "You build and run a sales team — hiring, coaching, setting strategy, and making sure the number gets hit quarter after quarter." },
+      { title: "Chief Operating Officer",          why: "You align people around a vision and execute it",       dayInLife: "You're the person who makes the CEO's vision actually happen — translating strategy into execution across every function of the business." },
+      { title: "Founder",                          why: "Especially if your product involves people at the core", dayInLife: "You build the vision, hire the people, keep the culture, and make every hard call — it's the most human job in business and also the loneliest." },
+      { title: "Management Consultant",            why: "You understand both the problem and the people involved", dayInLife: "You bring an outside perspective to inside problems — and your value is that you can see what the people living it can't." }
     ]
   },
   "creator+strategist": {
@@ -194,16 +194,15 @@ const COMBOS = {
     secondaryNote: "You bring warmth, originality, and a sense of craft to everything you do. Work that doesn't feel meaningful or beautiful doesn't hold your attention.",
     watchOut: "You can overthink the vision and underinvest in the grind. Big ideas need boring execution too — and that part often feels beneath you.",
     careers: [
-      { title: "Brand Strategy", why: "You build narratives that make businesses mean something" },
-      { title: "Creative Director", why: "Where strategy shapes the creative, not the other way around" },
-      { title: "Content & Marketing Leadership", why: "Making ideas travel at scale" },
-      { title: "Innovation Lead", why: "You're drawn to what doesn't exist yet" },
-      { title: "Founder / Creative Entrepreneur", why: "Your own canvas, your own rules" },
-      { title: "Advertising / Campaign Strategy", why: "The rare person who gets both the idea and the brief" }
+      { title: "Brand Strategy",                    why: "You build narratives that make businesses mean something", dayInLife: "You help organisations figure out who they are and how to say it — sitting at the intersection of research, insight and creative expression." },
+      { title: "Creative Director",                  why: "Where strategy shapes the creative, not the other way around", dayInLife: "You set the creative vision for a body of work — managing the tension between what's bold and what actually serves the brief." },
+      { title: "Content & Marketing Leadership",     why: "Making ideas travel at scale",                         dayInLife: "You own the editorial and marketing output of an organisation — deciding what to say, how to say it, and whether it's working." },
+      { title: "Innovation Lead",                    why: "You're drawn to what doesn't exist yet",               dayInLife: "You run the part of the organisation that's supposed to figure out what comes next — which means a lot of ambiguity, a lot of pitching, and occasionally being right." },
+      { title: "Founder / Creative Entrepreneur",    why: "Your own canvas, your own rules",                     dayInLife: "You build something that reflects your taste and your point of view — which is terrifying and the only way you'd have it." },
+      { title: "Advertising / Campaign Strategy",    why: "The rare person who gets both the idea and the brief", dayInLife: "You work on briefs, develop campaign concepts, and fight for the ideas that are actually interesting rather than just safe." }
     ]
   }
 };
-
 function getCombo(a, b) {
   const key = [a, b].sort().join('+');
   return COMBOS[key] || {
@@ -226,13 +225,13 @@ function getCombo(a, b) {
 ════════════════════════════════════════════════════════════════ */
 const QUESTIONS = [
   {
-    text: "You're given a vague project with no clear direction. What's your first instinct?",
+    text: "Your manager drops a completely new project on you with no brief. First thing you do after the meeting ends?",
     opts: [
-      { key:"A", text:"Map out a structured plan before doing anything else",   arc:"strategist" },
-      { key:"B", text:"Build a rough version quickly to test the idea",          arc:"builder"    },
-      { key:"C", text:"Pull the data and look for patterns first",               arc:"analyst"    },
-      { key:"D", text:"Brainstorm every possible creative angle",                arc:"creator"    },
-      { key:"E", text:"Talk to the people involved to understand what they need",arc:"connector"  }
+      { key:"A", text:"Open a doc and start mapping out what you actually know vs what you need to find out", arc:"strategist" },
+      { key:"B", text:"Message someone to grab a coffee and think through it out loud",                       arc:"connector"  },
+      { key:"C", text:"Spend the afternoon reading everything you can find about the problem space",          arc:"analyst"    },
+      { key:"D", text:"Sketch out three completely different directions just to see what sticks",             arc:"creator"    },
+      { key:"E", text:"Reach out to whoever the end user is to understand what they actually need",          arc:"builder"    }
     ]
   },
   {
@@ -246,23 +245,23 @@ const QUESTIONS = [
     ]
   },
   {
-    text: "When working in a team, you naturally end up…",
+    text: "The project is behind and the team is stressed. Without being asked, you end up being the person who…",
     opts: [
-      { key:"A", text:"Setting the overall direction and thinking ahead",       arc:"strategist" },
-      { key:"B", text:"Taking charge and getting things built",                 arc:"builder"    },
-      { key:"C", text:"Making sense of the data and keeping people grounded",   arc:"analyst"    },
-      { key:"D", text:"Generating ideas and making things look and feel right", arc:"creator"    },
-      { key:"E", text:"Keeping communication clear and the team connected",     arc:"connector"  }
+      { key:"A", text:"Figures out why it's behind and restructures the plan going forward",           arc:"strategist" },
+      { key:"B", text:"Just starts doing the thing nobody else has started yet",                       arc:"builder"    },
+      { key:"C", text:"Goes back through everything to find where it actually went wrong",             arc:"analyst"    },
+      { key:"D", text:"Reframes the brief — maybe the original direction was the problem",             arc:"creator"    },
+      { key:"E", text:"Checks in with everyone individually to understand what's blocking them",       arc:"connector"  }
     ]
   },
   {
-    text: "What kind of work environment actually energises you?",
+    text: "Two job offers, same salary, same title. You pick based on…",
     opts: [
-      { key:"A", text:"High-stakes discussions about direction and strategy",        arc:"strategist" },
-      { key:"B", text:"Fast-moving, build-it-and-see kind of energy",              arc:"builder"    },
-      { key:"C", text:"Quiet, focused time with data and clear thinking",          arc:"analyst"    },
-      { key:"D", text:"Creative sessions where nothing is off the table",          arc:"creator"    },
-      { key:"E", text:"A collaborative team where people actually talk to each other",arc:"connector"}
+      { key:"A", text:"Which one is solving a harder, more complex problem",                          arc:"strategist" },
+      { key:"B", text:"Which one has more autonomy to actually make and ship things",                 arc:"builder"    },
+      { key:"C", text:"Which one has better data and clearer metrics to work with",                  arc:"analyst"    },
+      { key:"D", text:"Which one gives you more creative freedom and fewer constraints",              arc:"creator"    },
+      { key:"E", text:"Which team felt more human and collaborative in the interview",                arc:"connector"  }
     ]
   },
   {
@@ -276,13 +275,13 @@ const QUESTIONS = [
     ]
   },
   {
-    text: "Free Saturday, no obligations. You'd probably end up…",
+    text: "You've just watched a documentary about a company that failed. What do you find yourself thinking about after?",
     opts: [
-      { key:"A", text:"Reading about business, markets or big ideas",             arc:"strategist" },
-      { key:"B", text:"Working on a side project or building something",          arc:"builder"    },
-      { key:"C", text:"Going deep on a trend, data set or research rabbit hole",  arc:"analyst"    },
-      { key:"D", text:"Making something — writing, designing, creating",          arc:"creator"    },
-      { key:"E", text:"Meeting people, having long conversations",                arc:"connector"  }
+      { key:"A", text:"The decisions that were made wrong and what should have been done instead",    arc:"strategist" },
+      { key:"B", text:"Whether you could have built something better with the same resources",        arc:"builder"    },
+      { key:"C", text:"The actual numbers — what the data would have shown if they'd looked properly",arc:"analyst"   },
+      { key:"D", text:"The story — how they communicated, the brand, what they stood for",           arc:"creator"    },
+      { key:"E", text:"The people — what it must have felt like to work there as it fell apart",     arc:"connector"  }
     ]
   },
   {
@@ -306,13 +305,13 @@ const QUESTIONS = [
     ]
   },
   {
-    text: "You're most curious about…",
+    text: "You're at a dinner and someone starts talking about their work. You're most engaged when they're explaining…",
     opts: [
-      { key:"A", text:"How businesses grow, compete and outlast each other",   arc:"strategist" },
-      { key:"B", text:"How products are built, iterated and scaled",           arc:"builder"    },
-      { key:"C", text:"How markets, economies and systems actually behave",    arc:"analyst"    },
-      { key:"D", text:"How ideas spread and why some things capture people",   arc:"creator"    },
-      { key:"E", text:"How people think, feel and make the choices they make", arc:"connector"  }
+      { key:"A", text:"How their industry actually works — the competitive dynamics, the strategy behind decisions", arc:"strategist" },
+      { key:"B", text:"What they're building or trying to launch right now",                                        arc:"builder"    },
+      { key:"C", text:"The numbers behind it — revenue, growth, how they measure success",                         arc:"analyst"    },
+      { key:"D", text:"The creative side — how they communicate, what they make, what it looks like",              arc:"creator"    },
+      { key:"E", text:"The team, the culture, the relationships — who the people actually are",                    arc:"connector"  }
     ]
   },
   {
@@ -336,13 +335,13 @@ const QUESTIONS = [
     ]
   },
   {
-    text: "If you're being honest, what do you lose track of time doing?",
+    text: "Your laptop dies and you can't work for 3 hours. You end up spending it…",
     opts: [
-      { key:"A", text:"Thinking through big problems, reading, planning",                        arc:"strategist" },
-      { key:"B", text:"Building, making, experimenting with something",                          arc:"builder"    },
-      { key:"C", text:"Reading about markets, data, research — going deep",                      arc:"analyst"    },
-      { key:"D", text:"Writing, designing, making — any kind of creating",                       arc:"creator"    },
-      { key:"E", text:"Talking with people, listening, helping someone figure things out",       arc:"connector"  }
+      { key:"A", text:"Thinking through a problem you've been stuck on — finally have space to think",  arc:"strategist" },
+      { key:"B", text:"Tinkering with something — fixing, making, experimenting with whatever's nearby",arc:"builder"    },
+      { key:"C", text:"Reading — articles, research, anything that helps you understand something better",arc:"analyst"   },
+      { key:"D", text:"Making something — writing, sketching, photographing, just creating",            arc:"creator"    },
+      { key:"E", text:"Talking — calling someone, catching up, ending up in a long conversation",       arc:"connector"  }
     ]
   },
   {
@@ -374,6 +373,26 @@ const QUESTIONS = [
       { key:"D", text:"Your originality — you made things nobody else would have",         arc:"creator"    },
       { key:"E", text:"Your impact on people — you changed how they saw themselves",       arc:"connector"  }
     ]
+  },
+  {
+    text: "You've just been told your approach to a project was wrong. How do you actually feel in that moment?",
+    opts: [
+      { key:"A", text:"Frustrated but already thinking about what the right approach should have been", arc:"strategist" },
+      { key:"B", text:"Fine — you'd rather know now than waste more time going the wrong way",          arc:"builder"    },
+      { key:"C", text:"Curious — you want to understand specifically where the logic broke down",        arc:"analyst"    },
+      { key:"D", text:"Unsettled — you need to sit with it before you can respond properly",            arc:"creator"    },
+      { key:"E", text:"You mostly want to understand how the feedback landed with the rest of the team", arc:"connector" }
+    ]
+  },
+  {
+    text: "A project you worked hard on didn't land the way you hoped. What stings most?",
+    opts: [
+      { key:"A", text:"That it didn't resonate — you wanted people to feel something and they didn't",  arc:"creator"    },
+      { key:"B", text:"That it didn't work — the outcome wasn't what it was supposed to be",            arc:"builder"    },
+      { key:"C", text:"That you missed something in the analysis you should have caught",               arc:"analyst"    },
+      { key:"D", text:"That you didn't have enough time to make it what it could have been",            arc:"strategist" },
+      { key:"E", text:"That the team put in so much effort and didn't get the recognition they deserved",arc:"connector" }
+    ]
   }
 ];
 
@@ -381,9 +400,9 @@ const QUESTIONS = [
    MILESTONES
 ════════════════════════════════════════════════════════════════ */
 const MILESTONES = {
-  4:  "Your profile is starting to take shape ✦",
-  9:  "Halfway there — the picture is getting clearer ✦",
-  14: "Last one. Let's see who you are ✦"
+  5:  "Your profile is starting to take shape ✦",
+  10: "Halfway there — the picture is getting clearer ✦",
+  16: "Last one. Let's see who you are ✦"
 };
 
 /* ════════════════════════════════════════════════════════════════
@@ -628,11 +647,15 @@ function renderQuestion() {
 
   const list = document.getElementById('opt-list');
   list.innerHTML = '';
-  q.opts.forEach(opt => {
+
+  // Shuffle options so same archetype doesn't always appear on same letter
+  const shuffled = [...q.opts].sort(() => Math.random() - 0.5);
+  const keys = 'ABCDE';
+  shuffled.forEach((opt, i) => {
     const li  = document.createElement('li');
     const btn = document.createElement('button');
     btn.className = 'opt-item';
-    btn.innerHTML = `<span class="opt-key">${opt.key}</span><span class="opt-text">${opt.text}</span>`;
+    btn.innerHTML = `<span class="opt-key">${keys[i]}</span><span class="opt-text">${opt.text}</span>`;
     btn.addEventListener('click', () => pick(btn, opt.arc));
     li.appendChild(btn);
     list.appendChild(li);
@@ -822,6 +845,7 @@ function showResult() {
     <div class="r-career-item" style="animation-delay:${i * 0.07}s">
       <div class="rci-title">${c.title}</div>
       <div class="rci-why">${c.why}</div>
+      <div class="rci-day">${c.dayInLife}</div>
     </div>
   `).join('');
 
