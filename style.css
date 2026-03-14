@@ -713,15 +713,24 @@ body {
   line-height: 1.6;
   font-weight: 300;
 }
+.rci-day-label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin-top: 12px;
+  opacity: 0.7;
+}
 .rci-day {
   font-size: 11px;
   color: var(--ink-3);
   line-height: 1.6;
   font-weight: 300;
   font-style: italic;
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid var(--paper-2);
+  margin-top: 4px;
+  padding-top: 0;
+  border-top: none;
 }
 
 /* Score bars */
