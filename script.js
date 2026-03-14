@@ -845,6 +845,7 @@ function showResult() {
     <div class="r-career-item" style="animation-delay:${i * 0.07}s">
       <div class="rci-title">${c.title}</div>
       <div class="rci-why">${c.why}</div>
+      <div class="rci-day-label">What will you actually do as a ${c.title}?</div>
       <div class="rci-day">${c.dayInLife}</div>
     </div>
   `).join('');
